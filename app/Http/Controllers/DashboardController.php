@@ -63,6 +63,13 @@ class DashboardController extends Controller
         {
            $s = datastorage::all();
            return view('layouts.views',compact('s'));
+       
+        }
+        public function dashview()
+        {
+           $s = datastorage::all();
+           return view('layouts.dashview',compact('s'));
+       
         }
 
         //download files button controllers
