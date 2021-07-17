@@ -23,7 +23,18 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
        
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+
+
+
+
+
+
+
+
+    
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
@@ -31,20 +42,27 @@
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    
+                    <h3>Files Uploaded</h3>
                 </div>
             </header>
 
             <!-- Page Content -->
             <main>
+
+           
+
+
             <div class="container">
             <div class="jumbotron">
             <table class="table table-bordered">
             <thead class="table-white">
             <br>
+            
+           
             <script>
             $(document).ready(function(){
                 $('.table').DataTable()
+                
             })
             </script>
             <tr>
@@ -64,11 +82,11 @@
             <td>{{$storage->name}}</td>
             <td>{{$storage->file}}</td>
             <td>{{$storage->description}}</td>
-            <td><a href="/file/download/{{$storage->file}}">Download</a></td>
-            <td><a href="{{route('fileedit',['id'=>$storage->id])}}">Edit</a>
-            <form action="{{route('deletefile',['id'=>$storage->id])}}" method="post">
+            <td><a href="/file/download/{{$storage->file}}"><button class="btn"><i class="fa fa-download"></i> Download</button></a></td>
+            <td><a href="{{route('fileedit',['id'=>$storage->id])}}"><button class="btn"><i class="fa fa-edit"></i> Edit</button></a>
             @csrf
-            <a href="{{route('deletefile',['id'=>$storage->id])}}">Delete</a>
+            
+            <a href="{{route('deletefile',['id'=>$storage->id])}}"><button class="btn"><i class="fa fa-trash"></i> Delete</button></a>
             </form>
            
             </td>
@@ -78,7 +96,21 @@
             </tbody>
             </table>
            
+            <style>
+            .btn {
+                 background-color: DodgerBlue;
+                border: none;
+                color: white;
+                cursor: pointer;
+               
+                 }
+                
+            .btn:hover {
+                 background-color: skyblue;
+                    }
 
+                 
+            </style>
             </div>
             </div>
 
