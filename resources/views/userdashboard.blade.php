@@ -1,8 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Hellow User') }}
-        </h2>
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('  HOME') }}
+            
+        </h1>
+        <style>
+            h2
+            {
+              font-family: "Times New Roman", Times, serif;
+              
+            }
+        
+        </style>
     </x-slot>
 
     <div class="py-12">
