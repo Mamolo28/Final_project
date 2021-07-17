@@ -78,15 +78,6 @@
                 <small class="text-danger"> {{$message}}</small>
                 @enderror
                 </div>
-                
-                
-                
-                
-                
-
-               
-               
-              
                 </div>
                 <div class="card-footer text-muted">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
