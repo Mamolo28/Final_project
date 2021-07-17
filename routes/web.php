@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::group(['middleware'=>['auth']], function () {
     //For auth
     Route::get('dashboard','App\Http\Controllers\DashboardController@index')->name('dashboard');
+    Route::get('dashboard','App\Http\Controllers\DashboardController@dashview')->name('dashboard');
    //for auth
 
    //for file upload and inserting to data base
