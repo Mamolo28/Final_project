@@ -22,6 +22,7 @@
        
     </head>
     <body class="font-sans antialiased">
+      
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
@@ -30,12 +31,62 @@
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
+               
             </header>
-
+            
+    
             <!-- Page Content -->
             <main>
+            <div class="container">
+            <div class="jumbotron">
+            <table class="table table-bordered">
+            <thead class="table-white">
+            <br>
+            <script>
+            $(document).ready(function(){
+                $('.table').DataTable()
+            })
+            </script>
+            <tr>
+            <th scope ="col">Name of Uploaders</th>
+            <th scope ="col">File</th>
+            <th scope ="col">Description</th>
+            <th scope="col">Download</th>
+            <th scope="col">Actions</th>
+            
+
+
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($s as $storage)
+            <tr>
+            <td>{{$storage->name}}</td>
+            <td>{{$storage->file}}</td>
+            <td>{{$storage->description}}</td>
+            <td><a href="/file/download/{{$storage->file}}">Download</a></td>
+            <td><a href="{{route('fileedit',['id'=>$storage->id])}}">Edit</a>
+            <form action="{{route('deletefile',['id'=>$storage->id])}}" method="post">
+            @csrf
+            <a href="{{route('deletefile',['id'=>$storage->id])}}">Delete</a>
+            </form>
+           
+            </td>
+            
+            </tr>
+            @endforeach
+            </tbody>
+            </table>
+           
+
+            </div>
+            </div>
 
             </main>
+            <style>
+            
+        </style>
         </div>
+       
     </body>
 </html>
