@@ -28,7 +28,7 @@
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    
+                <h3>Upload a File</h3>
                 </div>
             </header>
 
@@ -79,13 +79,15 @@
               
                 </div>
                 <div class="card-footer text-muted">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+                </div>
+               
+			</div>
                 </div>
                 </div>
 
-                </div>
-                </div>
-
+</style>
                 </form>
                 
             </main>
